@@ -1,20 +1,20 @@
 ﻿using System.Linq;
-using GatariSwitcher.Extensions;
-using GatariSwitcher.Helpers;
+using KawataSwitcher.Extensions;
+using KawataSwitcher.Helpers;
 using System.Threading.Tasks;
 
-namespace GatariSwitcher
+namespace KawataSwitcher
 {
     class ServerSwitcher
     {
         private readonly string serverAddress;
 
-        public ServerSwitcher(string gatariIpAddress)
+        public ServerSwitcher(string kawataIpAddress)
         {
-            this.serverAddress = gatariIpAddress;
+            this.serverAddress = kawataIpAddress;
         }
 
-        public void SwitchToGatari()
+        public void SwitchToKawata()
         {
             var lines = HostsFile.ReadAllLines();
             var result = lines.Where(x => !x.Contains("ppy.sh")).ToList();
@@ -41,14 +41,14 @@ namespace GatariSwitcher
 
         public Server GetCurrentServer()
         {
-            bool isGatari = HostsFile.ReadAllLines().Any(x => x.Contains("osu.ppy.sh") && !x.Contains("#"));
-            return isGatari ? Server.Gatari : Server.Official;
+            bool isKawata = HostsFile.ReadAllLines().Any(x => x.Contains("osu.ppy.sh") && !x.Contains("#"));
+            return isKawata ? Server.Kawata : Server.Official;
         }
     }
 
     public enum Server
     {
         Official,
-        Gatari
+        Kawata
     }
 }

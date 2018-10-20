@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace GatariSwitcher
+namespace KawataSwitcher
 {
     static class Logger
     {
@@ -38,7 +38,7 @@ namespace GatariSwitcher
             get
             {
                 return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData),
-                    "gatari-switcher-log.txt");
+                    "kawata-switcher-log.txt");
             }
         }
     }
