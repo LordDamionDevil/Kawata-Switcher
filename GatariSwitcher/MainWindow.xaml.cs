@@ -125,7 +125,7 @@ namespace KawataSwitcher
 
         private void websiteText_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            System.Diagnostics.Process.Start("http://osu.kawata.pw");
+            System.Diagnostics.Process.Start("http://kawata.pw");
         }
 
         private void titleBar_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
